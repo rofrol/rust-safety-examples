@@ -69,6 +69,8 @@ error: aborting due to previous error
 - http://www.steveklabnik.com/uniq_ptr_problem/
 - More Rust compared to C++ https://news.ycombinator.com/item?id=9329506
   - http://klmr.me/slides/modern-cpp/
+- https://www.quora.com/What-do-C-C++-systems-programmers-think-of-Rust
+- https://www.gitbook.com/book/aminb/rust-for-c
 
 > modern C++ does nothing to protect against:
 > - Iterator invalidation
@@ -106,3 +108,8 @@ error: aborting due to previous error
 > Rust has one difference to C++: It strongly encourages that memory be "shared XOR mutable", i.e., that memory is never shared and mutable at the same time. Mutate memory as you like "in the privacy of your own thread", so to speak. Contrast this with C++ where shared mutable memory is the default option and widely used.
 > it is a hard guarantee that safe Rust code does not have data races (or any UB for that matter).
 > http://programmers.stackexchange.com/questions/317873/how-does-rust-diverge-from-the-concurrency-facilities-of-c
+
+<br>
+
+> The primary advantage Rust has over idiomatic modern C++ is that it makes regular references completely safe. C++ has no equivalent for this (rvalue references are extremely limited by comparison). It obviates the need for smart pointers altogether most of the time, and prevents errors like iterator invalidation and dangling string_view that are virtually impossible to avoid in sufficiently complex C++ code. Unfortunately, most of these comparison articles do not make this point...
+> http://conscientiousprogrammer.com/blog/2014/12/21/how-to-think-about-rust-ownership-versus-c-plus-plus-unique-ptr/#comment-1754897661
