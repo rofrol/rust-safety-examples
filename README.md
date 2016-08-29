@@ -1,7 +1,7 @@
 - Examples from http://www.slideshare.net/jaejukim9/rust-programming-language
   - https://news.ycombinator.com/item?id=7588801
 - More https://www.reddit.com/r/rust/comments/2mwpie/what_are_the_advantages_of_rust_over_modern_c/
-- UB explanation http://stackoverflow.com/questions/2766731/what-exactly-do-ib-and-ub-mean
+- UB means Undefined behaviour http://stackoverflow.com/questions/2766731/what-exactly-do-ib-and-ub-mean
 
 ## Use after free
 
