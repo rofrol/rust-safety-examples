@@ -71,6 +71,7 @@ error: aborting due to previous error
   - http://klmr.me/slides/modern-cpp/
 - https://www.quora.com/What-do-C-C++-systems-programmers-think-of-Rust
 - https://www.gitbook.com/book/aminb/rust-for-c
+- http://theburningmonk.com/2015/05/rust-memory-safety-without-gc/
 
 > modern C++ does nothing to protect against:
 > - Iterator invalidation
@@ -107,6 +108,7 @@ error: aborting due to previous error
 > Unsafe Rust is a nasty, brutish language that feels a lot like C++. It allows you to do arbitrarily dangerous things, talk to the hardware, (mis-)manage memory manually, shoot yourself in the foot, etc. It is very much like C and C++ in that the correctness of the program is ultimately in your hands and the hands of all other programmers involved in it. You opt into this language with the keyword unsafe, and as in C and C++, a single mistake in a single location can bring the whole project crashing down.
 > Rust has one difference to C++: It strongly encourages that memory be "shared XOR mutable", i.e., that memory is never shared and mutable at the same time. Mutate memory as you like "in the privacy of your own thread", so to speak. Contrast this with C++ where shared mutable memory is the default option and widely used.
 > it is a hard guarantee that safe Rust code does not have data races (or any UB for that matter).
+> writing unsafe Rust code correctly is harder than writing C++ code correctly
 > http://programmers.stackexchange.com/questions/317873/how-does-rust-diverge-from-the-concurrency-facilities-of-c
 
 <br>
