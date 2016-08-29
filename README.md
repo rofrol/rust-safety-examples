@@ -1,8 +1,3 @@
-- Examples from http://www.slideshare.net/jaejukim9/rust-programming-language
-  - https://news.ycombinator.com/item?id=7588801
-- More https://www.reddit.com/r/rust/comments/2mwpie/what_are_the_advantages_of_rust_over_modern_c/
-- UB means Undefined behaviour http://stackoverflow.com/questions/2766731/what-exactly-do-ib-and-ub-mean
-
 ## Use after free
 
 C version
@@ -64,3 +59,50 @@ iterator_invalidation.rs:7 }
 iterator_invalidation.rs:5:5: 5:6 help: run `rustc --explain E0502` to see a detailed explanation
 error: aborting due to previous error
 ```
+
+## More info
+
+- http://kukuruku.co/hub/rust/comparing-rust-and-cpp
+- http://www.slideshare.net/jaejukim9/rust-programming-language
+- More examples https://www.reddit.com/r/rust/comments/2mwpie/what_are_the_advantages_of_rust_over_modern_c/
+- UB means Undefined behaviour http://stackoverflow.com/questions/2766731/what-exactly-do-ib-and-ub-mean
+- http://www.steveklabnik.com/uniq_ptr_problem/
+- More Rust compared to C++ https://news.ycombinator.com/item?id=9329506
+  - http://klmr.me/slides/modern-cpp/
+
+> modern C++ does nothing to protect against:
+> - Iterator invalidation
+> - "this" pointer invalidation
+> - Dangling references
+> - Use after move
+> - Null pointer dereference
+> pcwalton - https://news.ycombinator.com/item?id=7588801
+
+<br>
+
+> So caveat aside (but not ignored, it is a big issue), I see the advantages as 
+> 1. No crashes because of code misuse (as long as you do not use unsafe {} ) 
+> 2. No memory leaks 
+> 3. No data races (so you can thread this thing like mad, but better is has async task handling (crs pattern to). So lighting up your machines cores is no prob.
+> 4. Cross platform (really much better than most)
+> 5. Inbuilt version management, build system and test harness (with benchmarking to).
+> 6. Package management system (no more I Cannot build XX, it becomes automatic)
+> 7. Inbuilt generics and traits (c++ concepts and more)
+> 8. Very strongly typed (near zero runtime)
+> 9. Very fast 
+> 10. compiles into a c lib basically (easy integration)
+> https://safenetforum.org/t/rust-vs-c/3216/2
+
+<br>
+
+> Like C++, Rust uses the RAII approach everywhere (Resources Acquisition Is Initialization).
+> But Rust doesnt stop there. It goes a crucial step further. It wont let you access memory that was freed!
+> http://www.garin.io/rust-vs-c-pitfalls
+
+<br>
+
+> "Rust" is composed of two languages: One that tries very hard to isolate you from the dangers of systems programming, and a more powerful one without any such aspirations.
+> Unsafe Rust is a nasty, brutish language that feels a lot like C++. It allows you to do arbitrarily dangerous things, talk to the hardware, (mis-)manage memory manually, shoot yourself in the foot, etc. It is very much like C and C++ in that the correctness of the program is ultimately in your hands and the hands of all other programmers involved in it. You opt into this language with the keyword unsafe, and as in C and C++, a single mistake in a single location can bring the whole project crashing down.
+> Rust has one difference to C++: It strongly encourages that memory be "shared XOR mutable", i.e., that memory is never shared and mutable at the same time. Mutate memory as you like "in the privacy of your own thread", so to speak. Contrast this with C++ where shared mutable memory is the default option and widely used.
+> it is a hard guarantee that safe Rust code does not have data races (or any UB for that matter).
+> http://programmers.stackexchange.com/questions/317873/how-does-rust-diverge-from-the-concurrency-facilities-of-c
